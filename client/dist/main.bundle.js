@@ -598,9 +598,8 @@ var EventDashboardComponent = (function () {
     EventDashboardComponent.prototype.create_event = function () {
         var _this = this;
         this._service.create_event(this.event, function (res) {
-            // console.log("from event dash com create event: ", res);
             _this._service.retrieveAllEvent(function (res) {
-                // console.log("from event dash com oninit: ", res);
+                console.log("from event dash com oninit: ", res);
                 _this.allevents = res;
             });
         });
@@ -994,6 +993,7 @@ var MainService = (function () {
     MainService.prototype.create_event = function (event, callback) {
         this._http.post("/user/" + this.user._id + "/event", event).subscribe(function (res) {
             console.log("from service create event: ", res.json());
+            callback(res.json());
         }, function (err) {
             console.log("err from service create event: ", err);
         });

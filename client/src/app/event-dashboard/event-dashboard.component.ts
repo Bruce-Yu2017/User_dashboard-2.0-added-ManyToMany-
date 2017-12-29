@@ -38,9 +38,8 @@ export class EventDashboardComponent implements OnInit {
 
   create_event() {
     this._service.create_event(this.event, (res) => {
-      // console.log("from event dash com create event: ", res);
       this._service.retrieveAllEvent((res) => {
-        // console.log("from event dash com oninit: ", res);
+        console.log("from event dash com oninit: ", res);
         this.allevents = res;
       })
     })
@@ -52,7 +51,7 @@ export class EventDashboardComponent implements OnInit {
 
 
 
-   
+    
 
   }
 

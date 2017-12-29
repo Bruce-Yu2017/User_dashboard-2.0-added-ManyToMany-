@@ -337,6 +337,7 @@ create_event: function (req, res) {
               console.log("err from create even after save user: ", err);
             }
             else {
+              // res.redirect("/event")
               console.log("success create event");
               res.json("success create event")
             }

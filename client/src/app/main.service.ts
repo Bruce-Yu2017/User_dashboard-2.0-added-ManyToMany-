@@ -183,6 +183,7 @@ export class MainService {
     this._http.post("/user/" + this.user._id + "/event", event).subscribe(
       (res) => {
         console.log("from service create event: ", res.json());
+        callback(res.json())
       },
       (err) => {
         console.log("err from service create event: ", err);
